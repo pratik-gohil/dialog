@@ -3,9 +3,11 @@ import Portal from '../Portal'
 import styles from './dialog.module.css'
 import type { IDialog } from './types';
 import { cn } from '../../utils/cn';
+import useScrollLock from '../../hooks/useScrollLock';
 
 function Dialog({ children, open, onClose }: React.PropsWithChildren<IDialog>) {
- const [close, setClose] = useState(!open);
+ useScrollLock(open);
+ const [close, setClose] = useState(false);
  useLayoutEffect(() => {
   let closeTimeout: number;
   if (close) {
@@ -18,15 +20,6 @@ function Dialog({ children, open, onClose }: React.PropsWithChildren<IDialog>) {
    }
   };
  }, [close])
-
- useLayoutEffect(() => {
-  if (open) {
-   document.body.style.overflow = "hidden";
-  }
-  return () => {
-   document.body.style.overflow = "auto"
-  };
- }, [open]);
 
  return (
   <Portal selector='dialog-portal' show={open}>
