@@ -1,0 +1,29 @@
+@keyframes in {
+ from {
+  bottom: 150%;
+ }
+
+ to {
+  bottom: 50%;
+ }
+}
+
+@keyframes out {
+ from {
+  bottom: 50%;
+ }
+
+ to {
+  bottom: 150%;
+ }
+}
+
+.modal div {
+ animation-name: in;
+ animation-duration: .5s;
+}
+
+.modal.out div {
+ animation-name: out;
+ animation-duration: .5s;
+}

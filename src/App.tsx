@@ -1,12 +1,11 @@
-import './App.css'
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './features/routes/AppRoutes';
 
 function App() {
   return (
-    <main>
-      <h1 className="text-3xl font-bold underline">
-        IceWrap
-      </h1>
-    </main>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   )
 }
 
