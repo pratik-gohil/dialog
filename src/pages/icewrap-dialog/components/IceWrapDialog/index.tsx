@@ -11,7 +11,6 @@ const IceWrapDialog = ({ open, onClose }: IIceWrapDialog) => {
   <Dialog open={open} onClose={onClose}>
    <Card>
     <DialogHeader />
-    <DialogHeader />
     <DialogFooter />
    </Card>
   </Dialog>
